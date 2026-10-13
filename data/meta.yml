@@ -1,0 +1,57 @@
+indicator:
+  name: Snowfall
+  slug: snowfall
+  publisher: U.S. Environmental Protection Agency
+  source_page: https://19january2025snapshot.epa.gov/climate-indicators/climate-change-indicators-snowfall/index.html
+  technical_documentation: https://19january2025snapshot.epa.gov/system/files/documents/2024-12/snowfall_td.pdf
+  rights: Public domain, work of the U.S. Government (17 U.S.C. 105)
+datasets:
+- file: snowfall_trend_by_station.csv
+  figure: Figure 1
+  figure_title: Figure 1. Change in Total Snowfall in the Contiguous 48 States, 1930-2007
+  source_file: snowfall_fig-1.csv
+  source_sha256: b5a3c0b7eee39f1780c1d4bd1232d80a378d52ae0d1ebe84f5f8eaf77c825e9a
+  source_encoding: UTF-8
+  data_source: Kunkel et al., 2009
+  web_update: May 2014
+  unit: percent change per year
+  rows: 419
+  columns:
+  - name: latitude
+    type: number
+    description: Latitude of the weather station, decimal degrees north
+  - name: longitude
+    type: number
+    description: Longitude of the weather station, decimal degrees (negative = west)
+  - name: value
+    type: number
+    description: Trend in total winter snowfall at the station, 1930-2007, percent
+      change per year
+- file: snow_to_precip_ratio_change_by_station.csv
+  figure: Figure 2
+  figure_title: Figure 2. Change in Snow-to-Precipitation Ratio in the Contiguous
+    48 States, 1949-2024
+  source_file: snowfall_fig-2.csv
+  source_sha256: 4ecfabfa797dce5d31baf61cf4962496df8c7621e0f465af9965a30a86084bec
+  source_encoding: UTF-8
+  data_source: NOAA, 2024
+  web_update: December 2024
+  unit: percent change
+  rows: 170
+  columns:
+  - name: state
+    type: string
+    description: Two-letter postal code of the state the station is in
+  - name: latitude
+    type: number
+    description: Latitude of the weather station, decimal degrees north
+  - name: longitude
+    type: number
+    description: Longitude of the weather station, decimal degrees (negative = west)
+  - name: value
+    type: number
+    description: Change in the snow-to-precipitation ratio at the station, 1949-2024,
+      percent
+  - name: significant
+    type: integer
+    description: 1 if the trend is statistically significant, 0 if not
